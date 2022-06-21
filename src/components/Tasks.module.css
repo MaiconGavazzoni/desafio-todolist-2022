@@ -1,0 +1,119 @@
+.content{
+  width: 100%;
+  background: var(--gray-500);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1.5px solid var(--gray-400);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.content + .content{
+  margin-top: 0.75rem;
+}
+
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container span {
+  text-decoration: line-through;
+  color: var(--gray-300);
+ 
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  background-color: var(--gray-500);
+  border-radius: 9px;
+  border: 2px solid var(--blue-500);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: var(--gray-500);
+  border: 2px solid var(--blue-dark-500);
+}
+
+/* When the checkbox is checked, add a purple border and background */
+.container input:checked ~ .checkmark {
+  background-color: var(--purple-dark-500);
+  border: 2px solid var(--purple-dark-500);
+  
+}
+
+.container:hover input:checked ~ .checkmark {
+  background-color: var(--purple-500);
+  border: 2px solid var(--purple-500);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 4px;
+  top: 1.5px;
+  width: 4.69px;
+  height: 7.31px;
+  border: solid var(--gray-100);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.content button{
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.content button:hover{
+  color: var(--red-500);
+  background:var(--gray-400);
+}
